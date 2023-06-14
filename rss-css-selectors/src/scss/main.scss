@@ -1,0 +1,16 @@
+@use "sass:math";
+
+@import 
+  "abstracts/functions", 
+  "abstracts/variables";
+
+@import
+  'base/reset',
+  'base/base';
+
+@import
+  'layout/header',
+  'layout/footer';
+
+@import
+  'pages/home';
