@@ -1,0 +1,17 @@
+.left-col {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  transition: all .3s ease;
+
+  footer {
+    margin-top: auto;
+  }
+
+  &.active {
+    @media (min-width: em($breakpoint992)) {
+      width: calc(100% - 375px);
+    }
+  }
+}
