@@ -1,4 +1,4 @@
-export const keyCodes: string[] = [
+export const KEY_CODES: string[] = [
   'Digit1',
   'Digit2',
   'Digit3',
@@ -62,3 +62,5 @@ export const keyCodes: string[] = [
   'NumpadDivide',
   'NumpadMultiply',
 ];
+
+export const ICON_MENU_COLUMNS = 3;

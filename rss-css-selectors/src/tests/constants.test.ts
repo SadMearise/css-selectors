@@ -1,7 +1,7 @@
-import { keyCodes } from '../ts/constants';
+import { KEY_CODES } from '../ts/constants';
 
 describe('constants', () => {
-  test('Проверка длины массива keyCodes', () => {
-    expect(keyCodes).toHaveLength(62);
+  test('Проверка длины массива KEY_CODES', () => {
+    expect(KEY_CODES).toHaveLength(62);
   });
 });

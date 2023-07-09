@@ -5,7 +5,7 @@ import state from '../../../data/state';
 import Hint from '../Hint';
 import { getHighlightedCode } from '../../../highlight';
 import EventEmitter from '../../../utils/EventEmitter';
-import { keyCodes } from '../../../constants';
+import { KEY_CODES } from '../../../constants';
 import Navigation from '../../infoBlock/helpBlock/Navigation';
 import { Levels } from '../../../types';
 
@@ -104,7 +104,7 @@ export default class CSSEditor extends Component {
           }
 
           val = val.slice(0, val.length);
-        } else if (keyCodes.includes(code)) {
+        } else if (KEY_CODES.includes(code)) {
           if (this.selectorsBlock.getNode().classList.contains('blink')) {
             this.selectorsBlock.removeClass('blink');
           }
