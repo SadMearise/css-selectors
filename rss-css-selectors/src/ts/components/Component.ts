@@ -1,10 +1,4 @@
-type ComponentStructure = {
-  tagName?: keyof HTMLElementTagNameMap | string;
-  classNames?: string[];
-  textContent?: string;
-  parentNode?: Component | null;
-  attributes?: Record<string, string>;
-};
+import { ComponentStructure } from '../types';
 
 export default class Component {
   protected node: HTMLElement;

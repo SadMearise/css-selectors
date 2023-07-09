@@ -36,3 +36,11 @@ type Content = {
 };
 
 export type LevelsContent = Record<number, Content>;
+
+export type ComponentStructure = {
+  tagName?: keyof HTMLElementTagNameMap | string;
+  classNames?: string[];
+  textContent?: string;
+  parentNode?: ComponentStructure | null;
+  attributes?: Record<string, string>;
+};
