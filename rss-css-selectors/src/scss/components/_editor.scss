@@ -4,14 +4,14 @@
   border: solid 10px rgba(0, 0, 0, .35);
   border-radius: 4px;
   font-family: var(--fontFamilyMenlo);
-  font-size: rem(14);
+  font-size: getRemFromPx(14);
   line-height: math.div(21, 14);
 
   &__panel {
     flex: 0 0 50%;
   }
 
-  @media (max-width: em($breakpoint768)) {
+  @media (max-width: getEmFromPx($breakpoint768)) {
     flex-direction: column;
   }
 }

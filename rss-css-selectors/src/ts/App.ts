@@ -22,7 +22,7 @@ export default class App {
   public localStorage(): void {
     const data: string | null = localStorage.getItem('state');
 
-    if (data !== null) {
+    if (data) {
       const parsedData = JSON.parse(data);
 
       state.currentLevel = parsedData.currentLevel;

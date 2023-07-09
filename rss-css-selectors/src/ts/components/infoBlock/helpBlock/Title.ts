@@ -43,7 +43,7 @@ export default class Title extends Component {
     LevelList.titleSetContent.subscribe('title: set-content', () => this.setTextContent(textTitle));
 
     const setCheckmark = (data: string | undefined): void => {
-      if (data !== undefined) {
+      if (data) {
         const level = state.levels[Number(data)];
 
         if (checkmark.getNode().classList.contains('checkmark_completed')) {

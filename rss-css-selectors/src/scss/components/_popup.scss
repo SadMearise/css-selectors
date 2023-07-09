@@ -24,7 +24,7 @@
     min-height: 100%;
     padding: 52px;
 
-    @media (max-width: em($breakpoint576)) {
+    @media (max-width: getEmFromPx($breakpoint576)) {
       padding: 40px;
     }
   }
@@ -37,7 +37,7 @@
     max-width: 900px;
     position: relative;
 
-    @media (max-width: em($breakpoint768 + 0.02)) {
+    @media (max-width: getEmFromPx($breakpoint768 + 0.02)) {
       max-width: 682px;
     }
   }

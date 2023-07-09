@@ -47,7 +47,7 @@ export default class Table extends Component {
     Navigation.boardUpdateElements.subscribe('board: update-elements', (data) => {
       this.strobeElements = [];
 
-      if (data !== undefined) {
+      if (data) {
         this.insertBoardToTable(this, levelsContent[Number(data)].board);
       }
     });
@@ -56,7 +56,7 @@ export default class Table extends Component {
     Table.boardUpdateElements.subscribe('board: update-elements', (data) => {
       this.strobeElements = [];
 
-      if (data !== undefined) {
+      if (data) {
         this.insertBoardToTable(this, levelsContent[Number(data)].board);
       }
     });
@@ -65,7 +65,7 @@ export default class Table extends Component {
     LevelList.boardUpdateElements.subscribe('board: update-elements', (data) => {
       this.strobeElements = [];
 
-      if (data !== undefined) {
+      if (data) {
         this.insertBoardToTable(this, levelsContent[Number(data)].board);
       }
     });
@@ -74,7 +74,7 @@ export default class Table extends Component {
     ResetButton.boardUpdateElements.subscribe('board: update-elements', (data) => {
       this.strobeElements = [];
 
-      if (data !== undefined) {
+      if (data) {
         this.insertBoardToTable(this, levelsContent[Number(data)].board);
       }
     });
@@ -96,7 +96,7 @@ export default class Table extends Component {
 
       parent.append(tableElement);
 
-      if (classes !== undefined) {
+      if (classes) {
         if (classes.includes('strobe')) {
           this.strobeElements.push(tableElement);
         }

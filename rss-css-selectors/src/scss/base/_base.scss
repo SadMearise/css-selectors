@@ -16,8 +16,8 @@ body {
   flex-direction: column;
   height: 100vh;
 
-  @media (max-width: em($breakpoint1024)),
-  (max-height: em($breakpoint768)) {
+  @media (max-width: getEmFromPx($breakpoint1024)),
+  (max-height: getEmFromPx($breakpoint768)) {
     overflow-y: auto;
   }
 }

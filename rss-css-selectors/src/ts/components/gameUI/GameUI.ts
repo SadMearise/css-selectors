@@ -78,33 +78,41 @@ export default class GameUI extends Component {
               gameTargetElement.classList.add('hover');
 
               if (dataHTML) {
+                const breakpoint992 = 992;
+                const breakpoint768 = 768;
+                const htmlDataWordLength15 = 15;
+                const htmlDataWordLength20 = 20;
+                const elementPositionLeft200 = 200;
+                const elementPositionLeft280 = 280;
+                const elementPositionLeft500 = 500;
+                const elementPositionLeft800 = 800;
                 const topIndent = -50;
                 let leftIndent = 30;
 
-                if (window.innerWidth < 992) {
-                  if (getPosition(gameTargetElement).left < 280) {
+                if (window.innerWidth < breakpoint992) {
+                  if (getPosition(gameTargetElement).left < elementPositionLeft280) {
                     leftIndent = 0;
-                  } else if (getPosition(gameTargetElement).left < 800) {
-                    if (dataHTML.length > 15) {
+                  } else if (getPosition(gameTargetElement).left < elementPositionLeft800) {
+                    if (dataHTML.length > htmlDataWordLength15) {
                       leftIndent = -150;
                     }
                   }
                 }
-                if (window.innerWidth < 768) {
-                  if (getPosition(gameTargetElement).left < 200) {
-                    if (dataHTML.length > 20) {
+                if (window.innerWidth < breakpoint768) {
+                  if (getPosition(gameTargetElement).left < elementPositionLeft200) {
+                    if (dataHTML.length > htmlDataWordLength20) {
                       leftIndent = -40;
                     } else {
                       leftIndent = 0;
                     }
-                  } else if (getPosition(gameTargetElement).left < 280) {
-                    if (dataHTML.length > 20) {
+                  } else if (getPosition(gameTargetElement).left < elementPositionLeft280) {
+                    if (dataHTML.length > htmlDataWordLength20) {
                       leftIndent = -100;
                     } else {
                       leftIndent = 0;
                     }
-                  } else if (getPosition(gameTargetElement).left < 500) {
-                    if (dataHTML.length > 20) {
+                  } else if (getPosition(gameTargetElement).left < elementPositionLeft500) {
+                    if (dataHTML.length > htmlDataWordLength20) {
                       leftIndent = -200;
                     } else {
                       leftIndent = -80;

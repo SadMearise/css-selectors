@@ -17,7 +17,7 @@ export default class HTMLViewer extends Component {
 
     Editor.renderHeader(this, 'HTML Viewer', 'index.html');
     Editor.renderWindow(this, ['editor-panel__lines', 'editor-panel__lines_dark']);
-    if (Editor.window !== null) {
+    if (Editor.window) {
       Editor.window.append(workspace);
     }
     workspace.append(markup);

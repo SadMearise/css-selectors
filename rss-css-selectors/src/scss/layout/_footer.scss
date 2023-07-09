@@ -11,13 +11,13 @@
   &__img {
     width: 100%;
     height: auto;
-    max-width: rem(94.5);
-    max-height: rem(35);
+    max-width: getRemFromPx(94.5);
+    max-height: getRemFromPx(35);
     opacity: 0.5;
   }
 
   &__text {
-    font-size: rem(16);
+    font-size: getRemFromPx(16);
   }
 
   &__link {

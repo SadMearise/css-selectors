@@ -7,6 +7,7 @@ import { getHighlightedCode } from '../../../highlight';
 import EventEmitter from '../../../utils/EventEmitter';
 import { keyCodes } from '../../../constants';
 import Navigation from '../../infoBlock/helpBlock/Navigation';
+import { Levels } from '../../../types';
 
 export default class CSSEditor extends Component {
   public static readonly orderChange = new EventEmitter();
@@ -81,7 +82,7 @@ export default class CSSEditor extends Component {
 
     Editor.renderHeader(this, 'CSS Editor', 'style.css');
     Editor.renderWindow(this, ['editor-panel__lines']);
-    if (Editor.window !== null) {
+    if (Editor.window) {
       Editor.window.append(workspace);
     }
     workspace.append(enterBtn, input, this.selectorsBlock, text);
@@ -95,7 +96,7 @@ export default class CSSEditor extends Component {
         const { code } = event;
 
         if (code === 'Backspace') {
-          if (val.length === 0) {
+          if (!val.length) {
             this.selectorsBlock.setHTML('Type in a CSS selector');
             this.selectorsBlock.addClass('blink');
           } else {
@@ -142,7 +143,7 @@ export default class CSSEditor extends Component {
       if (i === result.length) return;
       let val = node.value;
 
-      if (val.length > 0) {
+      if (val.length) {
         CSSEditor.selectorsBlockRemoveClass.emit('this.selectorsBlock: remove-class');
       }
 
@@ -163,6 +164,17 @@ export default class CSSEditor extends Component {
     this.selectorsBlock.addClass('blink');
   }
 
+  private isUncompletedLevelExists = (levelsFromState: Record<number, Levels>): boolean => {
+    for (let level = 1; level <= Object.keys(levelsFromState).length; level += 1) {
+      if (!levelsFromState[level].completed) {
+        state.currentLevel = Object.values(levelsFromState).findIndex((el) => !el.completed) + 1;
+
+        return true;
+      }
+    }
+    return false;
+  };
+
   private compareResults(input: Component): void {
     const { currentLevel, levels } = state;
     const { strobeElements } = levelsContent[currentLevel];
@@ -171,18 +183,8 @@ export default class CSSEditor extends Component {
     const changeLevel = (i = 0): void => {
       const newLevel = currentLevel + 1 + i;
 
-      if (levels[newLevel] === undefined) {
-        const findUncompletedLevel = (): boolean => {
-          for (let level = 1; level <= Object.keys(levels).length; level += 1) {
-            if (!levels[level].completed) {
-              state.currentLevel = level;
-              return true;
-            }
-          }
-          return false;
-        };
-
-        if (!findUncompletedLevel()) {
+      if (!levels[newLevel]) {
+        if (!this.isUncompletedLevelExists(levels)) {
           CSSEditor.endGamePopup.emit('end-game: open-popup');
         }
       } else if (levels[newLevel].completed) {
@@ -193,10 +195,10 @@ export default class CSSEditor extends Component {
     };
 
     try {
-      if (value.length > 0) {
+      if (value.length) {
         const tableEl: HTMLElement | null = document.querySelector('.table');
 
-        if (tableEl !== null) {
+        if (tableEl) {
           const findEl: NodeListOf<Element> | null = tableEl.querySelectorAll(value);
 
           if (strobeElements === findEl.length && [...findEl].every((el) => el.classList.contains('strobe'))) {

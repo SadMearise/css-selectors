@@ -150,10 +150,10 @@ export default class LevelList extends Component {
       const clearEditor = (): void => {
         const input = document.querySelector('.editor-panel__input') as HTMLInputElement;
         const selectorsBlock: HTMLElement | null = document.querySelector('.editor-panel__selectors-block');
-        if (input !== null) {
+        if (input) {
           input.value = '';
         }
-        if (selectorsBlock !== null) {
+        if (selectorsBlock) {
           selectorsBlock.innerHTML = 'Type in a CSS selector';
           selectorsBlock.classList.add('blink');
         }

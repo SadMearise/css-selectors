@@ -53,7 +53,7 @@ export default class Info extends Component {
       text.getNode().insertAdjacentHTML('afterbegin', currentLevelInfo.description);
     }
 
-    if (examplesLength !== 0) {
+    if (examplesLength) {
       const examplesTitle = new Component({
         tagName: 'h4',
         classNames: ['info__examples-title'],

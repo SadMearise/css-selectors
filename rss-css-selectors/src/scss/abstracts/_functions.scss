@@ -1,14 +1,9 @@
-@function prc($pxOne, $pxTwo) {
-  $result: math.div($pxOne, $pxTwo) * 100%;
+@function getRemFromPx($px) {
+  $result: math.div($px, $defaultFontSize) + rem;
   @return $result;
 }
 
-@function rem($px) {
-  $result: math.div($px, $defaultFZ)+rem;
-  @return $result;
-}
-
-@function em($px) {
-  $result: math.div($px, $defaultFZ)+em;
+@function getEmFromPx($px) {
+  $result: math.div($px, $defaultFontSize) + em;
   @return $result;
 }

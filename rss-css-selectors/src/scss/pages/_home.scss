@@ -10,7 +10,7 @@
   }
 
   &.active {
-    @media (min-width: em($breakpoint992)) {
+    @media (min-width: getEmFromPx($breakpoint992)) {
       width: calc(100% - 375px);
     }
   }

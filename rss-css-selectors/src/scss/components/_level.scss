@@ -12,7 +12,7 @@
   &__link {
     display: block;
     padding: 5px 12px 5px 22px;
-    font-size: rem(16);
+    font-size: getRemFromPx(16);
     color: #777;
   }
 

@@ -1,4 +1,4 @@
-type Levels = {
+export type Levels = {
   completed: boolean;
   usedHint: boolean;
 };

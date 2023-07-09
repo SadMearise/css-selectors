@@ -1,6 +1,6 @@
 .markup {
   line-height: math.div(21, 14);
-  font-size: rem(14);
+  font-size: getRemFromPx(14);
   color: rgba(255, 255, 255, .3);
   font-family: var(--fontFamilyMenlo);
   cursor: default;

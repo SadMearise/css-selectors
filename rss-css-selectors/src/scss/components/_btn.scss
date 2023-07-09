@@ -12,9 +12,9 @@
   &_dark {
     background: rgba(0, 0, 0, .2);
     color: rgba(255, 255, 255, .3);
-    padding: rem(8) rem(15);
-    border-radius: rem(20);
-    font-size: rem(16);
+    padding: getRemFromPx(8) getRemFromPx(15);
+    border-radius: getRemFromPx(20);
+    font-size: getRemFromPx(16);
     text-decoration: none;
 
     &:hover {
@@ -26,12 +26,12 @@
   &_enter {
     position: absolute;
     background: #ddd;
-    border-radius: rem(2);
-    padding: rem(2) rem(7) rem(2) rem(7);
+    border-radius: getRemFromPx(2);
+    padding: getRemFromPx(2) getRemFromPx(7) getRemFromPx(2) getRemFromPx(7);
     color: #666;
-    border: solid rem(3) #999;
-    border-width: rem(1) rem(1) rem(6) rem(1);
-    font-size: rem(9);
+    border: solid getRemFromPx(3) #999;
+    border-width: getRemFromPx(1) getRemFromPx(1) getRemFromPx(6) getRemFromPx(1);
+    font-size: getRemFromPx(9);
     top: 7px;
     right: 7px;
     font-family: var(--fontFamilyMenlo);
@@ -80,7 +80,7 @@
     color: rgba(255, 255, 255, .4);
     margin: 0 auto;
     padding: 10px;
-    font-size: rem(16);
+    font-size: getRemFromPx(16);
 
     &:hover {
       background: rgba(255, 255, 255, .05);
